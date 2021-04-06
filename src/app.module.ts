@@ -2,6 +2,10 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
 import { CategoriasModule } from './categorias/categorias.module';
+import { DesafiosService } from './desafios/desafios.service';
+import { DesafiosController } from './desafios/desafios.controller';
+import { DesafiosModule } from './desafios/desafios.module';
+import { DesafiosModule } from './desafios/desafios.module';
 
 @Module({
   imports: [
@@ -16,8 +20,9 @@ import { CategoriasModule } from './categorias/categorias.module';
     ),
     JogadoresModule,
     CategoriasModule,
+    DesafiosModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [DesafiosController],
+  providers: [DesafiosService],
 })
 export class AppModule {}
